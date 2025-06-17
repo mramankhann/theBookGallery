@@ -17,7 +17,7 @@ function Signup() {
             [e.target.name]: e.target.value
         })
     }
-
+ 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
