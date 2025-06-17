@@ -1,0 +1,13 @@
+@import "tailwindcss";
+#root {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+.signin{
+  background-color: rgb(93, 93, 255);
+}
+.signin:hover{
+  background-color: rgb(0, 0, 172);
+}
