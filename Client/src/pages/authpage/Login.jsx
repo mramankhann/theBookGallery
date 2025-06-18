@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
 
 function Login() {
 
-    const [formData, setFromData] = useState({ email: '', password: '' })
+    const [formData, setFormData] = useState({ email: '', password: '' })
 
     const handleChanges = (e) => {
-        setFromData({
+        setFormData({
             ...formData,
             [e.target.name]: e.target.value
         })
@@ -81,7 +81,7 @@ function Login() {
                             <p className="text-center text-sm text-gray-600 mt-4">
                                 Don’t have an account?{" "}
                                 <Link to="/signup" className="text-blue-600 hover:underline cursor-pointer">
-                                    Sign in
+                                    Sign Up
                                 </Link>
                             </p>
 

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-rou
 import './App.css'
 import Login from './pages/authpage/Login'
 import Signup from './pages/authpage/Signup'
-import New from './pages/New'
+
 
 function App() {
 
@@ -13,7 +13,6 @@ function App() {
       <Routes>
         <Route path='/signup' element = {<Signup />} />
         <Route path='/login' element = {<Login />} />
-        <Route path='/new' element = {<New />} />
       </Routes>
     </BrowserRouter>
 
