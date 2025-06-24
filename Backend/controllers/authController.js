@@ -19,7 +19,6 @@ exports.register = async (req, res) => {
   }
 };
 
-
 exports.login = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -30,8 +29,18 @@ exports.login = async (req, res) => {
     if (!isMatch) return res.status(401).json({ msg: "Invalid credentials" });
 
     const token = jwt.sign({ id: user._id }, "secretjwt", { expiresIn: "1d" });
-    res.status(200).json({ token, user: { id: user._id, username: user.username, email: user.email } });
+
+    // ✅ Fix: use "_id" not "id"
+    res.status(200).json({
+      token,
+      user: {
+        _id: user._id,
+        username: user.username,
+        email: user.email,
+      },
+    });
   } catch (err) {
     res.status(500).json({ msg: "Login failed" });
   }
 };
+

@@ -12,7 +12,7 @@
   background-color: rgb(0, 0, 172);
 }
 
-.bookTitle,.bookDescription{
+.bookTitle,.bookDescription,.bookAuthor{
   border: 1px solid lightgray;
   padding: 5px;
   outline: none;
@@ -24,6 +24,9 @@
   font-family: sans-serif;
   font-weight: bold;
  
+}
+.imageUpload{
+  text-align-last: center;
 }
 
 

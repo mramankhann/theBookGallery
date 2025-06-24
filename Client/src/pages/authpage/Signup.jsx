@@ -3,10 +3,12 @@ import axios from 'axios'
 import { ArrowRight, Mail, Lock, User } from 'lucide-react';
 import Common from './Common';
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 
 
 function Signup() {
+const navigate = useNavigate();
 
     const [formData, setFormData] = useState({ username: '', email: '', password: '' })
 
@@ -18,16 +20,19 @@ function Signup() {
         })
     }
  
-    const handleSubmit = async (e) => {
-        e.preventDefault()
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    await axios.post("http://localhost:5000/api/auth/register", formData);
+    alert("Signup successful! Please login now.");
+    
+    navigate("/login"); // 🔁 Redirect to login page
 
-        try {
-            await axios.post('http://localhost:5000/api/auth/register', formData)
-            alert("User Registered Successfully")
-        } catch (err) {
-            alert(err.response.data.msg || "Signup failed")
-        }
-    };
+  } catch (err) {
+    alert(err.response?.data?.msg || "Signup failed");
+  }
+};
+
 
 
 
