@@ -37,7 +37,7 @@ const Home = () => {
       <div className="bg-white shadow p-4 flex justify-between items-center">
         <h1 className="text-xl font-bold text-blue-600">📚 BookSwap</h1>
         <div className="flex items-center gap-3">
-          <span className="text-gray-700 text-sm">Hello, {user.username}</span>
+          <span className="text-gray-700 text-sm">Hello,</span>
           <button onClick={() => navigate("/upload")} className="cursor-pointer bg-blue-500 text-white px-3 py-1 rounded text-sm">Upload Book</button>
           <button onClick={handleLogout} className="cursor-pointer bg-red-500 text-white px-3 py-1 rounded text-sm">Logout</button>
         </div>
