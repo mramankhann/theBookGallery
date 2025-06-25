@@ -11,24 +11,23 @@ const Home = () => {
   const user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
-    if (!token || !user) {
+    if (!token || !user.username) {
       navigate("/login");
       return;
     }
 
-    axios.get("http://localhost:5000/api/books/my", {
+    axios.get(`${process.env.REACT_APP_API_URL}/api/books/my`, {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then(res => setBooks(res.data))
     .catch(err => {
       console.error(err);
-      localStorage.clear();
       navigate("/login");
     });
   }, []);
 
   const handleLogout = () => {
-    localStorage.clear();
+    localStorage.removeItem("token");
     navigate("/login");
   };
 
@@ -39,8 +38,8 @@ const Home = () => {
         <h1 className="text-xl font-bold text-blue-600">📚 BookSwap</h1>
         <div className="flex items-center gap-3">
           <span className="text-gray-700 text-sm">Hello, {user.username}</span>
-          <button onClick={() => navigate("/upload")} className="bg-blue-500 text-white px-3 py-1 rounded text-sm">Upload Book</button>
-          <button onClick={handleLogout} className="bg-red-500 text-white px-3 py-1 rounded text-sm">Logout</button>
+          <button onClick={() => navigate("/upload")} className="cursor-pointer bg-blue-500 text-white px-3 py-1 rounded text-sm">Upload Book</button>
+          <button onClick={handleLogout} className="cursor-pointer bg-red-500 text-white px-3 py-1 rounded text-sm">Logout</button>
         </div>
       </div>
 

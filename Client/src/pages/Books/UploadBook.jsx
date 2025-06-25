@@ -25,7 +25,7 @@ const UploadBook = () => {
     const token = localStorage.getItem('token');
 
     try {
-      const res = await axios.post("http://localhost:5000/api/books/upload", bookData, {
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/books/upload`, bookData, {
         headers: {
           Authorization: `Bearer ${token}`
         }

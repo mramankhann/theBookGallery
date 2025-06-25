@@ -9,7 +9,7 @@ const EditBook = () => {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/books/${id}`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/books/${id}`)
       .then(res => {
         setBookData(res.data);
       })
