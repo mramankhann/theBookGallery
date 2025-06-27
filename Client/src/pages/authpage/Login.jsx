@@ -23,7 +23,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", formData);
+      const res = await axios.post("https://thebookgallery.onrender.com/api/auth/login", formData);
 
       // ✅ Save token and user with _id, username, email
       localStorage.setItem("token", res.data.token);

@@ -25,7 +25,7 @@ const UploadBook = () => {
     const token = localStorage.getItem('token');
 
     try {
-      const res = await axios.post("http://localhost:5000/api/books/upload", bookData, {
+      const res = await axios.post("https://thebookgallery.onrender.com/api/books/upload", bookData, {
         headers: {
           Authorization: `Bearer ${token}`
         }

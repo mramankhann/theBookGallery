@@ -17,7 +17,7 @@ const Home = () => {
       return;
     }
 
-    axios.get("http://localhost:5000/api/books/my", {
+    axios.get("https://thebookgallery.onrender.com/api/books/my", {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then(res => setBooks(res.data))

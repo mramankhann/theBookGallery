@@ -9,7 +9,7 @@ const EditBook = () => {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/books/${id}`)
+    axios.get(`https://thebookgallery.onrender.com/api/books/${id}`)
       .then(res => {
         setBookData(res.data);
       })
@@ -23,7 +23,7 @@ const EditBook = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/books/${id}`, bookData, {
+      await axios.put(`https://thebookgallery.onrender.com/api/books/${id}`, bookData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert("Book updated successfully");

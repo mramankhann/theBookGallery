@@ -23,7 +23,7 @@ const navigate = useNavigate();
   const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    await axios.post("http://localhost:5000/api/auth/register", formData);
+    await axios.post("https://thebookgallery.onrender.com/api/auth/register", formData);
     alert("Signup successful! Please login now.");
     
     navigate("/login"); // 🔁 Redirect to login page
