@@ -1,7 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="fixed bottom-0 w-full bg-gray-800 text-white py-3 text-center mt-10">
-      <p>© 2025 BookSwap. Made with ❤️ by Aman</p>
+    <footer className="bg-blue-500 text-white py-4 text-center mt-10">
+      <p className="text-sm md:text-base">
+        © 2025 <span className="font-semibold">theBookGallery</span>. Made with ❤️ by Aman
+      </p>
     </footer>
   );
 };

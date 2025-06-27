@@ -10,18 +10,40 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" p-4 flex justify-between items-center shadow-md">
-      <Link to="/" className=" text-4xl font-bold ">📚 BookSwap</Link>
+    <nav className="p-4 md:px-8 flex justify-between items-center shadow-md bg-white">
+      {/* Logo / Project Name */}
+      <Link to="/" className="text-3xl font-extrabold text-blue-500 flex items-center gap-2">
+        🖼️ <span>theBookGallery</span>
+      </Link>
+
+      {/* Right Section */}
       <div className="flex items-center space-x-4">
         {user ? (
           <>
-            <span className="text-sm">Welcome, {user.username}</span>
-            <button onClick={handleLogout} className="bg-white text-blue-600 px-3 py-1 rounded cursor-pointer">Logout</button>
+            <span className="text-gray-700 text-sm md:text-base">
+              Welcome, <span className="font-semibold">{user.username}</span>
+            </span>
+            <button
+              onClick={handleLogout}
+              className="bg-blue-500 cursor-pointer text-white px-4 py-1.5 rounded-md hover:bg-purple-700 transition"
+            >
+              Logout
+            </button>
           </>
         ) : (
           <>
-            <Link to="/login" className="text-2xl font-bold">Login</Link>
-            <Link to="/signup" className="text-2xl font-bold">Signup</Link>
+            <Link
+              to="/login"
+              className="text-purple-500 font-semibold hover:underline transition text-lg"
+            >
+              Login
+            </Link>
+            <Link
+              to="/signup"
+              className="bg-purple-600 text-white px-4 py-1.5 rounded-md hover:bg-purple-700 transition text-lg"
+            >
+              Signup
+            </Link>
           </>
         )}
       </div>

@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const authRoutes = require("./routes/authRoutes");
+const authRoutes = require('./routes/authRoutes');
 const bookRoutes = require('./routes/bookRoutes');
 const connectDB = require('./config/db');
 dotenv.config();
@@ -18,7 +18,7 @@ app.use('/api/books',bookRoutes);
 
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the BookSwap Application API');
+    res.send('Welcome to the theBookGallery Application API');
 });
 
 const PORT = process.env.PORT || 5000;

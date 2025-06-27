@@ -22,7 +22,7 @@ function App() {
         <Route path="/upload" element={<UploadBook />} />
         <Route path="/" element={<Home />} />
         <Route path="/book/:id" element={<BookDetail />} />
-        <Route path="/book/edit/:id" element={<EditBook />} />
+<Route path="/book/edit/:id" element={<EditBook />} />
       </Routes>
     </BrowserRouter>
 

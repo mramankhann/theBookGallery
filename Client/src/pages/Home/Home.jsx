@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Footer from '../../components/Footer'
+import Navbar from '../../components/Navbar'
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -11,37 +12,31 @@ const Home = () => {
   const user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
-    if (!token || !user.username) {
+    if (!token || !user) {
       navigate("/login");
       return;
     }
 
-    axios.get(`${process.env.REACT_APP_API_URL}/api/books/my`, {
+    axios.get("http://localhost:5000/api/books/my", {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then(res => setBooks(res.data))
     .catch(err => {
       console.error(err);
+      localStorage.clear();
       navigate("/login");
     });
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.clear();
     navigate("/login");
   };
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Navbar */}
-      <div className="bg-white shadow p-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold text-blue-600">📚 BookSwap</h1>
-        <div className="flex items-center gap-3">
-          <span className="text-gray-700 text-sm">Hello,</span>
-          <button onClick={() => navigate("/upload")} className="cursor-pointer bg-blue-500 text-white px-3 py-1 rounded text-sm">Upload Book</button>
-          <button onClick={handleLogout} className="cursor-pointer bg-red-500 text-white px-3 py-1 rounded text-sm">Logout</button>
-        </div>
-      </div>
+
+<Navbar />
 
       {/* Book Grid */}
     <div className="p-6 max-w-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
