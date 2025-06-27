@@ -4,6 +4,8 @@ import axios from 'axios';
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import { Link } from "react-router-dom";
+import BookDetail from '../Books/BookDetail';
+
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -16,6 +18,8 @@ const Home = () => {
       navigate("/login");
       return;
     }
+
+    
 
     axios.get("https://thebookgallery.onrender.com/api/books/my", {
       headers: { Authorization: `Bearer ${token}` }

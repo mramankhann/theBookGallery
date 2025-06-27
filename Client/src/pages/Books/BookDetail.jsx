@@ -9,7 +9,7 @@ const BookDetail = () => {
   const user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/books/${id}`)
+    axios.get(`https://thebookgallery.onrender.com/api/books/${id}`)
       .then(res => setBook(res.data))
       .catch(() => navigate("/"));
   }, [id, navigate]);
