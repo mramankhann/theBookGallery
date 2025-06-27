@@ -12,20 +12,20 @@ const Navbar = () => {
   return (
     <nav className="p-4 md:px-8 flex justify-between items-center shadow-md bg-white">
       {/* Logo / Project Name */}
-      <Link to="/" className="text-3xl font-extrabold text-blue-500 flex items-center gap-2">
-        🖼️ <span>theBookGallery</span>
+      <Link to="/" className="title text-3xl font-extrabold text-blue-500 flex items-center gap-2">
+         <span>theBookGallery</span>
       </Link>
 
       {/* Right Section */}
       <div className="flex items-center space-x-4">
         {user ? (
           <>
-            <span className="text-gray-700 text-sm md:text-base">
-              Welcome, <span className="font-semibold">{user.username}</span>
+            <span className="welcome text-gray-700 text-sm md:text-base">
+              Welcome, 🖐<span className="font-semibold">{user.username}</span>
             </span>
             <button
               onClick={handleLogout}
-              className="bg-blue-500 cursor-pointer text-white px-4 py-1.5 rounded-md hover:bg-purple-700 transition"
+              className="logout bg-blue-500 cursor-pointer text-white px-4 py-1.5 rounded-md hover:bg-purple-700 transition"
             >
               Logout
             </button>

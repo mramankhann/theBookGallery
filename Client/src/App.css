@@ -29,4 +29,15 @@
   text-align-last: center;
 }
 
-
+@media (max-width: 450px) {
+  .title{
+    font-size: 1rem;
+  }
+  .welcome{
+    font-size: 0.7rem;
+  }
+  .logout{
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+}
