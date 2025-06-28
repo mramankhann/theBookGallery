@@ -40,7 +40,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-100">
 
-<Navbar />
+<Navbar /> 
 
       {/* Book Grid */}
     <div className="p-6 max-w-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

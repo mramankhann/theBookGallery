@@ -5,6 +5,7 @@
  box-sizing: border-box;
 }
 
+
 .signin{
   background-color: rgb(93, 93, 255);
 }
@@ -34,10 +35,19 @@
     font-size: 1rem;
   }
   .welcome{
-    font-size: 0.7rem;
+    font-size: 0.5rem;
+    position: absolute;
+    left:20px;
+    top: 35px;
   }
   .logout{
+    font-size: 0.7rem;
+    padding: 0.3rem 0.8rem;
+  }
+  .bookspan{
     font-size: 0.8rem;
-    padding: 0.5rem 1rem;
   }
 }
+
+
+
