@@ -9,8 +9,7 @@
 - Fully responsive modern UI
 
 ## 🌐 Live Demo
-Frontend: [https://mybookgallery.vercel.app](https://mybookgallery.vercel.app)  
-Backend: [https://mybookgallery-api.onrender.com](https://mybookgallery-api.onrender.com)
+Live Link [Click Here](https://thebookgallery.vercel.app/)
 
 ## 🛠️ Tech Stack
 - **Frontend**: React, Tailwind CSS, Axios, React Router
