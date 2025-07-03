@@ -1,4 +1,4 @@
-# 📚 myBookGallery – MERN Book Sharing App
+# 📚 theBookGallery – MERN Book Sharing App
 
 **myBookGallery** is a full-stack MERN application that allows users to register, upload, and manage their personal book collection.
 
